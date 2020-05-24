@@ -13,6 +13,8 @@
 		4CEC15EA247A154A00936E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC15E8247A154A00936E0B /* Main.storyboard */; };
 		4CEC15EC247A154B00936E0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC15EB247A154B00936E0B /* Assets.xcassets */; };
 		4CEC15EF247A154B00936E0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC15ED247A154B00936E0B /* LaunchScreen.storyboard */; };
+		4CEC15F9247A1C6800936E0B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC15F8247A1C6800936E0B /* DatabaseManager.swift */; };
+		4CEC1609247A2F5300936E0B /* MoneyLover.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC1607247A2F5300936E0B /* MoneyLover.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4CEC15EB247A154B00936E0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CEC15EE247A154B00936E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CEC15F0247A154C00936E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CEC15F8247A1C6800936E0B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		4CEC1608247A2F5300936E0B /* MoneyLover.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyLover.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		4CEC15E1247A154A00936E0B /* MoneyLover */ = {
 			isa = PBXGroup;
 			children = (
+				4CEC15F7247A1C4300936E0B /* DataHolder */,
 				4CEC15E2247A154A00936E0B /* AppDelegate.swift */,
 				4CEC15E4247A154A00936E0B /* SceneDelegate.swift */,
 				4CEC15E6247A154A00936E0B /* ViewController.swift */,
@@ -65,6 +70,23 @@
 				4CEC15F0247A154C00936E0B /* Info.plist */,
 			);
 			path = MoneyLover;
+			sourceTree = "<group>";
+		};
+		4CEC15F7247A1C4300936E0B /* DataHolder */ = {
+			isa = PBXGroup;
+			children = (
+				4CEC15F8247A1C6800936E0B /* DatabaseManager.swift */,
+				4CEC15FA247A20D000936E0B /* Model */,
+			);
+			path = DataHolder;
+			sourceTree = "<group>";
+		};
+		4CEC15FA247A20D000936E0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CEC1607247A2F5300936E0B /* MoneyLover.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEC15F9247A1C6800936E0B /* DatabaseManager.swift in Sources */,
 				4CEC15E7247A154A00936E0B /* ViewController.swift in Sources */,
 				4CEC15E3247A154A00936E0B /* AppDelegate.swift in Sources */,
+				4CEC1609247A2F5300936E0B /* MoneyLover.xcdatamodeld in Sources */,
 				4CEC15E5247A154A00936E0B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +362,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4CEC1607247A2F5300936E0B /* MoneyLover.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4CEC1608247A2F5300936E0B /* MoneyLover.xcdatamodel */,
+			);
+			currentVersion = 4CEC1608247A2F5300936E0B /* MoneyLover.xcdatamodel */;
+			path = MoneyLover.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4CEC15D7247A154A00936E0B /* Project object */;
 }
