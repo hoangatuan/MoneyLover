@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R10-Cn-5cq">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,111 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoneyLover" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1129" y="-6"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="eZX-RH-bx8">
+            <objects>
+                <viewController id="NuF-NE-dzL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hny-Cm-xfb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tUO-Ad-RSs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="YnG-hp-ftU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pB-e1-qv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="324"/>
+        </scene>
+        <!--Wallet Transaction View-->
+        <scene sceneID="fhs-Fn-FRf">
+            <objects>
+                <viewController id="qSo-wp-nFM" customClass="WalletTransactionView" customModule="MoneyLover" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QyS-K1-79o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="852-hD-vKR" customClass="CustomNavigationBar" customModule="MoneyLover" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jNI-lf-2lG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lEG-pD-Q25">
+                                <rect key="frame" x="0.0" y="100" width="414" height="587"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QNk-W6-W6a" firstAttribute="bottom" secondItem="lEG-pD-Q25" secondAttribute="bottom" id="3mw-hM-Zdr"/>
+                            <constraint firstItem="QNk-W6-W6a" firstAttribute="trailing" secondItem="852-hD-vKR" secondAttribute="trailing" id="6A5-hd-D13"/>
+                            <constraint firstItem="lEG-pD-Q25" firstAttribute="top" secondItem="852-hD-vKR" secondAttribute="bottom" id="A3L-0E-jBB"/>
+                            <constraint firstItem="852-hD-vKR" firstAttribute="leading" secondItem="QNk-W6-W6a" secondAttribute="leading" id="ASP-eJ-59b"/>
+                            <constraint firstItem="QNk-W6-W6a" firstAttribute="trailing" secondItem="lEG-pD-Q25" secondAttribute="trailing" id="RXd-Lb-gxP"/>
+                            <constraint firstItem="lEG-pD-Q25" firstAttribute="leading" secondItem="QNk-W6-W6a" secondAttribute="leading" id="YwC-nS-fWw"/>
+                            <constraint firstItem="852-hD-vKR" firstAttribute="top" secondItem="QyS-K1-79o" secondAttribute="top" id="djr-GA-zsw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QNk-W6-W6a"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bez-h1-lfU"/>
+                    <connections>
+                        <outlet property="transactionTableView" destination="lEG-pD-Q25" id="CjM-v2-4Mh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q4k-ZY-jwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718.840579710145" y="-334.23913043478262"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KNd-Ed-ejy">
+            <objects>
+                <tabBarController id="R10-Cn-5cq" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GUM-OS-cip">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cJH-tX-gle" kind="relationship" relationship="viewControllers" id="jKe-8d-wnx"/>
+                        <segue destination="NuF-NE-dzL" kind="relationship" relationship="viewControllers" id="X4k-Gd-hRR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykj-dm-nu9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106" y="-5"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="hfK-5v-Eja">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cJH-tX-gle" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="gYE-Nm-W4b"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZJz-K3-oKm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qSo-wp-nFM" kind="relationship" relationship="rootViewController" id="jOw-kO-ggk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jd-1D-tP2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811.59420289855075" y="-334.23913043478262"/>
         </scene>
     </scenes>
 </document>
