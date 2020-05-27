@@ -22,4 +22,16 @@ class StoryBoardManager {
         let categorySelectionView = storyboard.instantiateViewController(withIdentifier: CategorySelectionView.identifier) as! CategorySelectionView
         return categorySelectionView
     }
+    
+    static func instanceTransactionNoteView() -> TransactionNoteView {
+        let storyboard = UIStoryboard(name: StoryBoardManager.MainStoryBoard, bundle: nil)
+        let transactionNoteView = storyboard.instantiateViewController(withIdentifier: TransactionNoteView.identifier) as! TransactionNoteView
+        return transactionNoteView
+    }
+    
+    static func instanceDatePickerView() -> DatePickerView {
+        let storyboard = UIStoryboard(name: StoryBoardManager.MainStoryBoard, bundle: nil)
+        let datePickerView = storyboard.instantiateViewController(withIdentifier: DatePickerView.identifier) as! DatePickerView
+        return datePickerView
+    }
 }

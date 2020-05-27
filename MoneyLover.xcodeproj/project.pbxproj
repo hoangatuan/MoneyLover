@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C259B04247EAEF900A63F10 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C259B03247EAEF900A63F10 /* DatePickerView.swift */; };
+		4C2DF25C247D7463002824D7 /* MonthTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF250247D7463002824D7 /* MonthTransaction+CoreDataClass.swift */; };
+		4C2DF25D247D7463002824D7 /* MonthTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF251247D7463002824D7 /* MonthTransaction+CoreDataProperties.swift */; };
+		4C2DF25E247D7463002824D7 /* Wallet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF252247D7463002824D7 /* Wallet+CoreDataClass.swift */; };
+		4C2DF25F247D7463002824D7 /* Wallet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF253247D7463002824D7 /* Wallet+CoreDataProperties.swift */; };
+		4C2DF262247D7463002824D7 /* DayTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF256247D7463002824D7 /* DayTransaction+CoreDataClass.swift */; };
+		4C2DF263247D7463002824D7 /* DayTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF257247D7463002824D7 /* DayTransaction+CoreDataProperties.swift */; };
+		4C2DF264247D7463002824D7 /* Status+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF258247D7463002824D7 /* Status+CoreDataClass.swift */; };
+		4C2DF265247D7463002824D7 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF259247D7463002824D7 /* Status+CoreDataProperties.swift */; };
+		4C2DF266247D7463002824D7 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF25A247D7463002824D7 /* Transaction+CoreDataClass.swift */; };
+		4C2DF267247D7463002824D7 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF25B247D7463002824D7 /* Transaction+CoreDataProperties.swift */; };
+		4C2DF26B247D757B002824D7 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF269247D757B002824D7 /* Category+CoreDataClass.swift */; };
+		4C2DF26C247D757B002824D7 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DF26A247D757B002824D7 /* Category+CoreDataProperties.swift */; };
 		4CEA069C247B3E4200320777 /* TransactionPerDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA069A247B3E4200320777 /* TransactionPerDayCell.swift */; };
 		4CEA069D247B3E4200320777 /* TransactionPerDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA069B247B3E4200320777 /* TransactionPerDayCell.xib */; };
 		4CEA06A0247B3EA000320777 /* TransactionPerMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA069E247B3EA000320777 /* TransactionPerMonthCell.swift */; };
@@ -35,6 +48,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C259B03247EAEF900A63F10 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		4C2DF250247D7463002824D7 /* MonthTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF251247D7463002824D7 /* MonthTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C2DF252247D7463002824D7 /* Wallet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF253247D7463002824D7 /* Wallet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C2DF256247D7463002824D7 /* DayTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF257247D7463002824D7 /* DayTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C2DF258247D7463002824D7 /* Status+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF259247D7463002824D7 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C2DF25A247D7463002824D7 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF25B247D7463002824D7 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4C2DF269247D757B002824D7 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4C2DF26A247D757B002824D7 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4CEA069A247B3E4200320777 /* TransactionPerDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPerDayCell.swift; sourceTree = "<group>"; };
 		4CEA069B247B3E4200320777 /* TransactionPerDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionPerDayCell.xib; sourceTree = "<group>"; };
 		4CEA069E247B3EA000320777 /* TransactionPerMonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPerMonthCell.swift; sourceTree = "<group>"; };
@@ -102,6 +128,7 @@
 				4CEA06AB247C2F4B00320777 /* AddTransactionView.swift */,
 				4CEA06B2247C8B0300320777 /* CategorySelectionView.swift */,
 				4CEA06B4247C8B1800320777 /* TransactionNoteView.swift */,
+				4C259B03247EAEF900A63F10 /* DatePickerView.swift */,
 			);
 			path = NewTransaction;
 			sourceTree = "<group>";
@@ -143,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				4CEC15F8247A1C6800936E0B /* DatabaseManager.swift */,
+				4CEC1607247A2F5300936E0B /* MoneyLover.xcdatamodeld */,
 				4CEC15FA247A20D000936E0B /* Model */,
 			);
 			path = DataHolder;
@@ -151,7 +179,18 @@
 		4CEC15FA247A20D000936E0B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4CEC1607247A2F5300936E0B /* MoneyLover.xcdatamodeld */,
+				4C2DF250247D7463002824D7 /* MonthTransaction+CoreDataClass.swift */,
+				4C2DF251247D7463002824D7 /* MonthTransaction+CoreDataProperties.swift */,
+				4C2DF252247D7463002824D7 /* Wallet+CoreDataClass.swift */,
+				4C2DF253247D7463002824D7 /* Wallet+CoreDataProperties.swift */,
+				4C2DF256247D7463002824D7 /* DayTransaction+CoreDataClass.swift */,
+				4C2DF257247D7463002824D7 /* DayTransaction+CoreDataProperties.swift */,
+				4C2DF269247D757B002824D7 /* Category+CoreDataClass.swift */,
+				4C2DF26A247D757B002824D7 /* Category+CoreDataProperties.swift */,
+				4C2DF258247D7463002824D7 /* Status+CoreDataClass.swift */,
+				4C2DF259247D7463002824D7 /* Status+CoreDataProperties.swift */,
+				4C2DF25A247D7463002824D7 /* Transaction+CoreDataClass.swift */,
+				4C2DF25B247D7463002824D7 /* Transaction+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,20 +321,33 @@
 				4CEA06A9247C2E7500320777 /* BaseTabBarController.swift in Sources */,
 				4CEC15F9247A1C6800936E0B /* DatabaseManager.swift in Sources */,
 				4CEC15E7247A154A00936E0B /* ViewController.swift in Sources */,
+				4C259B04247EAEF900A63F10 /* DatePickerView.swift in Sources */,
 				4CEA06AF247C302700320777 /* UIViewControllerExtension.swift in Sources */,
 				4CEA069C247B3E4200320777 /* TransactionPerDayCell.swift in Sources */,
+				4C2DF265247D7463002824D7 /* Status+CoreDataProperties.swift in Sources */,
+				4C2DF25C247D7463002824D7 /* MonthTransaction+CoreDataClass.swift in Sources */,
+				4C2DF26C247D757B002824D7 /* Category+CoreDataProperties.swift in Sources */,
+				4C2DF266247D7463002824D7 /* Transaction+CoreDataClass.swift in Sources */,
 				4CEA06B1247C306A00320777 /* StoryBoardManager.swift in Sources */,
 				4CEC15E3247A154A00936E0B /* AppDelegate.swift in Sources */,
 				4CEC161E247A5A1400936E0B /* CustomNavigationBar.swift in Sources */,
 				4CEA06B3247C8B0300320777 /* CategorySelectionView.swift in Sources */,
+				4C2DF25F247D7463002824D7 /* Wallet+CoreDataProperties.swift in Sources */,
 				4CEC1609247A2F5300936E0B /* MoneyLover.xcdatamodeld in Sources */,
 				4CEA06A0247B3EA000320777 /* TransactionPerMonthCell.swift in Sources */,
 				4CEA06AC247C2F4B00320777 /* AddTransactionView.swift in Sources */,
 				4CEC1621247A5BC700936E0B /* UIViewExtension.swift in Sources */,
+				4C2DF26B247D757B002824D7 /* Category+CoreDataClass.swift in Sources */,
+				4C2DF262247D7463002824D7 /* DayTransaction+CoreDataClass.swift in Sources */,
+				4C2DF267247D7463002824D7 /* Transaction+CoreDataProperties.swift in Sources */,
 				4CEC15E5247A154A00936E0B /* SceneDelegate.swift in Sources */,
+				4C2DF25D247D7463002824D7 /* MonthTransaction+CoreDataProperties.swift in Sources */,
 				4CEC1625247A5E0900936E0B /* TransactionCell.swift in Sources */,
 				4CEA06A5247B51C000320777 /* TransactionPerDayCollectionView.swift in Sources */,
+				4C2DF25E247D7463002824D7 /* Wallet+CoreDataClass.swift in Sources */,
+				4C2DF263247D7463002824D7 /* DayTransaction+CoreDataProperties.swift in Sources */,
 				4CEC1619247A586900936E0B /* WalletTransactionView.swift in Sources */,
+				4C2DF264247D7463002824D7 /* Status+CoreDataClass.swift in Sources */,
 				4CEA06B5247C8B1800320777 /* TransactionNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

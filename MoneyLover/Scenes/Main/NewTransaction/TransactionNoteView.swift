@@ -8,23 +8,39 @@
 
 import UIKit
 
-class TransactionNoteView: UIViewController {
+protocol TransactionNoteDelegate: NSObject {
+    func didFinishInsertingNote(_ note: String)
+}
 
+class TransactionNoteView: UIViewController {
+    // MARK: IBOutlet
+    @IBOutlet weak var noteTextField: UITextField!
+    
+    weak var delegate: TransactionNoteDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        noteTextField.delegate = self
+        noteTextField.becomeFirstResponder()
+        
+        navigationItem.title = "Ghi chú"
+        let leftBarButton = UIBarButtonItem(title: "< Thêm giao dịch", style: .plain, target: self, action: #selector(didTapButtonBack))
+        navigationItem.leftBarButtonItem = leftBarButton
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc
+    func didTapButtonBack() {
+        navigationController?.popViewController(animated: true)
     }
-    */
+}
 
+extension TransactionNoteView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let noteString = textField.text {
+            delegate?.didFinishInsertingNote(noteString)
+            navigationController?.popViewController(animated: true)
+        }
+        
+        return true
+    }
 }
