@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 enum Type: Int {
-    case expenses = 1
+    case expenses = 0
     case revenue
     case loan
 }
@@ -80,24 +80,24 @@ class DatabaseManager: DatabaseDAO {
     }
     
     // Category
-    func newCategory(id: Int16, name: String, imageName: String, type: Int16) -> Category {
+    func newCategory(name: String, imageName: String, type: Int16) -> Category {
         let category = Category(context: managedObjectContext)
-        category.id = id
         category.name = name
         category.imageName = imageName
         category.type = type
+        saveContext()
         return category
     }
     
     func getListDefaultCategory() -> [Category] {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.id), ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Category.name), ascending: true)]
         var categories: [Category] = []
         
         managedObjectContext.performAndWait {
             do {
                 categories = try fetchRequest.execute()
-                if categories.isEmpty {
+                  if categories.isEmpty {
                     initializeListDefaultCategory()
                     categories = getListDefaultCategory()
                 }
@@ -108,27 +108,42 @@ class DatabaseManager: DatabaseDAO {
         return categories
     }
     
+    func findCategoryByName(name: String) -> Category? {
+        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        var category: Category?
+        managedObjectContext.performAndWait {
+            do {
+                category = try fetchRequest.execute().first
+            } catch let error {
+                print("Can not search for Category by name: \(error)")
+            }
+        }
+        
+        return category
+    }
+    
     func initializeListDefaultCategory() {
-        let _ = newCategory(id: 1, name: "Appointments", imageName: "Appointments", type: 0)
-        let _ = newCategory(id: 2, name: "Birthdays", imageName: "Birthdays", type: 1)
-        let _ = newCategory(id: 3, name: "Chores", imageName: "Chores", type: 2)
-        let _ = newCategory(id: 4, name: "Drinks", imageName: "Drinks", type: 0)
-        let _ = newCategory(id: 5, name: "Groceries", imageName: "Groceries", type: 1)
-        let _ = newCategory(id: 6, name: "Inbox", imageName: "Inbox", type: 2)
-        let _ = newCategory(id: 7, name: "Photos", imageName: "Photos", type: 0)
-        let _ = newCategory(id: 8, name: "Trips", imageName: "Trips", type: 1)
+        let _ = newCategory(name: "Appointments", imageName: "Appointments", type: 0)
+        let _ = newCategory(name: "Birthdays", imageName: "Birthdays", type: 1)
+        let _ = newCategory(name: "Chores", imageName: "Chores", type: 2)
+        let _ = newCategory(name: "Drinks", imageName: "Drinks", type: 0)
+        let _ = newCategory(name: "Groceries", imageName: "Groceries", type: 1)
+        let _ = newCategory(name: "Inbox", imageName: "Inbox", type: 2)
+        let _ = newCategory(name: "Photos", imageName: "Photos", type: 0)
+        let _ = newCategory(name: "Trips", imageName: "Trips", type: 1)
     }
     
     // Wallet
-    func newWallet(id: Int16, name: String, currentMoney: Double) {
+    func newWallet(name: String, currentMoney: Double) {
         let wallet = Wallet(context: managedObjectContext)
-        wallet.id = id
         wallet.name = name
         wallet.currentMoney = currentMoney
+        saveContext()
     }
     
     func initializeDefaultWallet() {
-        let _ = newWallet(id: 1, name: "Effort", currentMoney: 0.0)
+        let _ = newWallet(name: "Effort", currentMoney: 0.0)
     }
     
     func getDefaultWallet() -> Wallet {
@@ -152,5 +167,68 @@ class DatabaseManager: DatabaseDAO {
         }
         
         return wallet
+    }
+    
+    // MonthTransaction
+    func newMonthTransaction(month: Int, year: Int) -> MonthTransaction {
+        let monthTransaction = MonthTransaction(context: managedObjectContext)
+        monthTransaction.month = Int16(month)
+        monthTransaction.year = Int16(year)
+        monthTransaction.wallet = getDefaultWallet()
+        monthTransaction.moneyIn = 0.0
+        monthTransaction.moneyOut = 0.0
+        saveContext()
+        return monthTransaction
+    }
+    
+    func getMonthTransaction(month: Int, year: Int) -> MonthTransaction? {
+        let fetchRequest: NSFetchRequest<MonthTransaction> = MonthTransaction.fetchRequest()
+        let monthPredicate = NSPredicate(format: "month == %ld", month)
+        let yearPredicate = NSPredicate(format: "year == %ld", year)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [monthPredicate, yearPredicate])
+        
+        fetchRequest.predicate = andPredicate
+        var result: MonthTransaction?
+        managedObjectContext.performAndWait {
+            do {
+                result = try fetchRequest.execute().first
+            } catch let error {
+                print("Can not perform get Month Transaction: \(error)")
+            }
+        }
+        
+        return result
+    }
+    
+    // DayTransaction
+    func newDayTransaction(day: Int, monthTransaction: MonthTransaction) -> DayTransaction {
+        let dayTransaction = DayTransaction(context: managedObjectContext)
+        dayTransaction.day = Int16(day)
+        dayTransaction.monthTransaction = monthTransaction
+        saveContext()
+        return dayTransaction
+    }
+    
+    func getDayTransaction(date: Date) -> DayTransaction? {
+        guard let monthTransaction = getMonthTransaction(month: date.month, year: date.year) else {
+            return nil
+        }
+        
+        let listDayTransactions = monthTransaction.dayTransactions?.allObjects as! [DayTransaction]
+        return listDayTransactions.filter({
+            $0.day == date.day
+        }).first
+    }
+    
+    // Transaction
+    func newTransaction(money: Double, note: String?, weekDay: Int, category: Category, dayTransaction: DayTransaction) -> Transaction {
+        let transaction = Transaction(context: managedObjectContext)
+        transaction.money = money
+        transaction.note = note
+        transaction.category = category
+        transaction.dayTransaction = dayTransaction
+        transaction.weekDay = Int16(weekDay)
+        saveContext()
+        return transaction
     }
 }

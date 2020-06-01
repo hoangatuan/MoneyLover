@@ -20,9 +20,9 @@ extension MonthTransaction {
     @NSManaged public var month: Int16
     @NSManaged public var year: Int16
     @NSManaged public var dayTransactions: NSSet?
-    @NSManaged public var status: Status?
-    @NSManaged public var wallet: Wallet?
-
+    @NSManaged public var wallet: Wallet
+    @NSManaged public var moneyIn: Double
+    @NSManaged public var moneyOut: Double
 }
 
 // MARK: Generated accessors for dayTransactions

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G4032" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G5033" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName=".Category" syncable="YES">
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -13,36 +12,30 @@
         <relationship name="transactions" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="dayTransaction" inverseEntity="Transaction"/>
     </entity>
     <entity name="MonthTransaction" representedClassName=".MonthTransaction" syncable="YES">
-        <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="moneyIn" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="moneyOut" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="month" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="year" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="dayTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayTransaction" inverseName="monthTransaction" inverseEntity="DayTransaction"/>
-        <relationship name="status" maxCount="1" deletionRule="Nullify" destinationEntity="Status" inverseName="monthTransaction" inverseEntity="Status"/>
         <relationship name="wallet" maxCount="1" deletionRule="Nullify" destinationEntity="Wallet" inverseName="monthTransactions" inverseEntity="Wallet"/>
     </entity>
-    <entity name="Status" representedClassName=".Status" syncable="YES">
-        <attribute name="moneyIn" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="moneyOut" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="monthTransaction" maxCount="1" deletionRule="Nullify" destinationEntity="MonthTransaction" inverseName="status" inverseEntity="MonthTransaction"/>
-    </entity>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES">
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="weekDay" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="transactions" inverseEntity="Category"/>
-        <relationship name="dayTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayTransaction" inverseName="transactions" inverseEntity="DayTransaction"/>
+        <relationship name="dayTransaction" maxCount="1" deletionRule="Nullify" destinationEntity="DayTransaction" inverseName="transactions" inverseEntity="DayTransaction"/>
     </entity>
     <entity name="Wallet" representedClassName=".Wallet" syncable="YES">
         <attribute name="currentMoney" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="monthTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MonthTransaction" inverseName="wallet" inverseEntity="MonthTransaction"/>
     </entity>
     <elements>
-        <element name="Category" positionX="719.6796875" positionY="-324.43359375" width="128" height="118"/>
+        <element name="Category" positionX="719.6796875" positionY="-324.43359375" width="128" height="103"/>
         <element name="DayTransaction" positionX="507.44140625" positionY="-485.90625" width="128" height="88"/>
-        <element name="MonthTransaction" positionX="266.9453125" positionY="-501.1171875" width="128" height="118"/>
-        <element name="Status" positionX="275.02734375" positionY="-306.48828125" width="128" height="88"/>
+        <element name="MonthTransaction" positionX="266.9453125" positionY="-501.1171875" width="128" height="133"/>
         <element name="Transaction" positionX="711.66796875" positionY="-516.0234375" width="128" height="118"/>
-        <element name="Wallet" positionX="40.6171875" positionY="-494.1953125" width="128" height="103"/>
+        <element name="Wallet" positionX="40.6171875" positionY="-494.1953125" width="128" height="88"/>
     </elements>
 </model>

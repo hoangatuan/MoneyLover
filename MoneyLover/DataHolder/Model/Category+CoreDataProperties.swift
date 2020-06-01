@@ -16,7 +16,6 @@ extension Category {
         return NSFetchRequest<Category>(entityName: "Category")
     }
 
-    @NSManaged public var id: Int16
     @NSManaged public var imageName: String
     @NSManaged public var name: String
     @NSManaged public var type: Int16

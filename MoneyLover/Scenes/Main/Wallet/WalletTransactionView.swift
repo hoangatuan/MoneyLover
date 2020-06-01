@@ -12,10 +12,12 @@ class WalletTransactionView: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var transactionTableView: UITableView!
 
+    var presenter: WalletTransactionPresenter?
     // MARK: - Initialize
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        presenter = WalletTransactionPresenter()
         setupTableview()
     }
     
@@ -28,11 +30,16 @@ class WalletTransactionView: UIViewController {
         transactionTableView.rowHeight = UITableView.automaticDimension
         transactionTableView.estimatedRowHeight = 600
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        transactionTableView.reloadData()
+    }
 }
 
 extension WalletTransactionView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return presenter?.findMonthTransaction(month: Date().month, year: Date().year)?.dayTransactions?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

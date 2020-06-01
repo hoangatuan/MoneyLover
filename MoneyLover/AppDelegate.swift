@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        DatabaseManager.shared.saveContext()
+        
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DatePickerDelegate: NSObjectProtocol {
-    func didFinishPickingDate(date: DateComponents)
+    func didFinishPickingDate(date: Date)
 }
 
 class DatePickerView: UIViewController {
@@ -36,8 +36,7 @@ class DatePickerView: UIViewController {
     
     @objc
     func didTapButtonDone() {
-        let components = Calendar.current.dateComponents([.year, .month, .day, .weekday], from: datePickerView.date)
-        delegate?.didFinishPickingDate(date: components)
+        delegate?.didFinishPickingDate(date: datePickerView.date)
         navigationController?.popViewController(animated: true)
     }
 }

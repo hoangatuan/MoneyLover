@@ -43,7 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        DatabaseManager.shared.saveContext()
+        
     }
 }
 

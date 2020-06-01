@@ -34,7 +34,7 @@
                         <sections>
                             <tableViewSection id="9hU-dZ-Y5N">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="XzB-Bx-L21">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="XzB-Bx-L21">
                                         <rect key="frame" x="0.0" y="18" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XzB-Bx-L21" id="Ceu-0D-dQo">
@@ -57,7 +57,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GxW-pR-eW9">
                                                     <rect key="frame" x="72" y="16" width="326" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>

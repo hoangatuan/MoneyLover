@@ -14,13 +14,15 @@ protocol TransactionNoteDelegate: NSObject {
 
 class TransactionNoteView: UIViewController {
     // MARK: IBOutlet
-    @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet private weak var noteTextField: UITextField!
     
     weak var delegate: TransactionNoteDelegate?
+    var currentNote: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         noteTextField.delegate = self
+        noteTextField.text = currentNote
         noteTextField.becomeFirstResponder()
         
         navigationItem.title = "Ghi chú"

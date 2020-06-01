@@ -18,7 +18,7 @@ extension DayTransaction {
     }
 
     @NSManaged public var day: Int16
-    @NSManaged public var monthTransaction: MonthTransaction?
+    @NSManaged public var monthTransaction: MonthTransaction
     @NSManaged public var transactions: NSSet?
 
 }
